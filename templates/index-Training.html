@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hepatitis Mortality Predictor</title>
+</head>
+<body>
+	<div>
+		<h2>Hepatit Olum Tahmini</h2>
+	</div>
+
+	<div class="container">
+		<form method="POST" action="/predict">
+			<!-- Feature Starts Here -->
+			<div>
+				<!-- input data send to backend  -->
+				<label for="age">Age</label>
+					<input type="number" name="age" min=7 max=100 value='7'>
+			</div>
+			<div>
+				<!-- input data send to backend  -->
+				<label for="age">Gender</label>
+					<input type="radio" name="sex" value='1' checked="checked">Male
+					<input type="radio" name="sex" value='2' checked="checked">Female
+			</div>
+
+			<div>
+				<!-- input data send to backend  -->
+				<label for="age">Varices</label>
+					<select name="varices">
+						<option value="1">No</option>
+						<option value="2">Yes</option>
+					</select>
+			</div>
+			<!-- button to send and reset above data in the form -->
+		<button type="submit">Predict</button>
+		<button type="reset">Reset</button>
+
+			
+			
+		</form>
+
+
+	</div>
+	<!-- Prediction Layout -->
+	<div class="container">
+		{{ sample_data }}
+		<h5>Pretty Data</h5>
+		<p>{{ pretty_data }}</p>
+		<h5>Encoded Data</h5>
+		{{ encoded_data }}
+		
+	</div>
+		
+
+
+</body>
+</html>
